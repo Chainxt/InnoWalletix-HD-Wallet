@@ -1,0 +1,265 @@
+.parent-container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  .parent-container input{
+    margin: 0.1rem;
+  }
+  
+  .add-passcode-button{
+    background-color: #D3D3D3;
+    padding: 10px;
+    width: 90%;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  
+  .wallet-buttons-container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .wallet-buttons-container button{
+    background-color: #D3D3D3;
+    padding: 10px;
+    width: 100%;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  
+  .import-screen-container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .import-screen-btn-container{
+    padding: 25px;
+  }
+  
+  .import-screen-btn-container button{
+    background-color: #D3D3D3;
+    padding: 10px;
+    width: 100px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  
+  .mnemonic-textarea{
+    width: 400px;
+    height: 75px;
+  }
+  
+  .wallet-container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .wallet-container button{
+    background-color: #D3D3D3;
+    padding: 10px;
+    width: 300px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  
+  .export-mnemonic-container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .export-mnemonic-container button{
+    background-color: #D3D3D3;
+    padding: 5px;
+    width: 25%;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .fund-account-container{
+  
+  }
+  
+  .account-detail-container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .send-ether-textarea{
+    width: 400px;
+    height: 35px;
+  }
+  
+  .send-ether-container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .send-ether-container input{
+    margin: 10px;
+    width: 100px;
+  }
+  
+  .send-ether-container button{
+    background-color: #D3D3D3;
+    padding: 10px;
+    width: 100px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  
+  .accounts-dropdown-container {
+   
+  }
+  
+  /* --------------Popup----------- */
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+    
+  .popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    max-width: 300px;
+    width: 100%;
+  }
+  
+  .popup ul{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    background-color: #fff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .popup li {
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .popup li:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .popup li.selected{
+    background-color: #ccc;
+  }
+  
+  /* Alert css */
+  .custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .custom-modal-content {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content h2 {
+    margin-top: 0;
+  }
+  
+  .modal-content button {
+    margin-top: 20px;
+  }
+  
+  .add-account-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+  }
+  
+  .add-account-container input{
+    width: 100%;
+    padding-bottom: 5px;
+    margin-bottom: 5px;;
+  }
+  
+  .add-account-buttons-container{
+    padding: 10px;
+  }
+  
+  .add-account-buttons-container button{
+    background-color: #D3D3D3;
+    padding: 10px;
+    width: 100px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  
+  .connected-text{
+    color: green;
+    font-size: 10px;
+    margin: 10px;
+    /* padding-left: 35%; */
+  }
+  
+  .not-connected-text{
+    color: red;
+    font-size: 10px;
+    margin: 10px;
+    /* padding-left: 35%; */
+  }
+  
+  .SpinnerCls {
+    margin-top:25%;
+  }
+  
+  .SpinnerOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 9998;
+    cursor: not-allowed;
+  }
+
+  .passwordMismatchLabel{
+    color: #ff0000;
+    font-size: 0.75rem;
+  }
