@@ -7,7 +7,7 @@ import { useState } from 'react'
 function App() {
   const [isPasscodeEntered, setIsPasscodeEntered] = useState(false);
   return (
-    <div>
+    <div className="App">
       <GenerateWallet isPasscodeEntered={isPasscodeEntered} setIsPasscodeEntered={setIsPasscodeEntered}/>
     </div>
   );
