@@ -1,6 +1,6 @@
 # InnoWalletix
 
-InnoWalletix is an electron based non-custodial HD wallet (DApp), which allows a user to create and store a new wallet on desktop, import an existing wallet and external accounts, export the private keys, switch the test blockchain network and send ethers across the accounts in a test network.
+InnoWalletix is an electron based non-custodial HD wallet (DApp), which allows a user to create and store a new wallet on desktop, import an existing wallet and external accounts, export the private keys, switch the test blockchain network and send ethers across the accounts in a test network. This HD-Wallet utility can be plugged in too with a desktop application and lets user to sign in to the wallet for doing transactions on blockchain.
 
 ## 🛠 Built With
 
