@@ -9,6 +9,7 @@ import AddAccountPopup from './add-account-popup';
 import ImportAccountPopup from './import-account-popup';
 import Dropdown from './dropdown';
 import CryptoJS from 'crypto-js';
+import chainxt_logo from '../assets/chainxt_logo.png';
 
 // To be consumed by App.js for the accounts info
 export const retrieveAccountsInfo = () =>{
@@ -373,7 +374,24 @@ function HDWalletForm({ isPasscodeEntered,  setIsPasscodeEntered}) {
   if(!localStorage.getItem('passcode')){
     return (
       <div className="parent-container">
-        <h2>Set Passcode</h2>
+        <div className='logo_container'>
+        <a href="https://www.chainxt.io" target="_blank" rel="noopener noreferrer">
+          <img src={chainxt_logo} className='logo_image'></img>
+        </a>
+      </div>
+      <div className='product_title_container'>
+        <a className="product_title_text" href="https://www.chainxt.io/2023/06/25/introduction-to-innowalletix-hd-wallet/" target="_blank" rel="noopener noreferrer">
+          InnoWalletix - HD Wallet
+        </a>
+      </div>
+      <div className='product_footer_container'>
+        Source Code @ 
+        <a className="product_footer_text" href="https://github.com/Chainxt/InnoWalletix-HD-Wallet" target="_blank" rel="noopener noreferrer">
+          Chainxt Github
+        </a>
+      </div>
+        <div className="validate-passcode-container">
+        <div className="passcode-title">Set Passcode</div>
          <form onSubmit={handlePasscodeSubmit}>
             <div>
               <input
@@ -394,6 +412,7 @@ function HDWalletForm({ isPasscodeEntered,  setIsPasscodeEntered}) {
             {!isPasscodeMatched && <p className="passwordMismatchLabel">Passwords do not match</p>}
             <button className="add-passcode-button" type="submit">Submit</button>
        </form>
+        </div>
       </div>
     )
   }
@@ -401,6 +420,22 @@ function HDWalletForm({ isPasscodeEntered,  setIsPasscodeEntered}) {
 
   return (
     <div className="parent-container">
+      <div className='logo_container'>
+        <a href="https://www.chainxt.io" target="_blank" rel="noopener noreferrer">
+          <img src={chainxt_logo} className='logo_image'></img>
+        </a>
+      </div>
+      <div className='product_title_container'>
+        <a className="product_title_text" href="https://www.chainxt.io/2023/06/25/introduction-to-innowalletix-hd-wallet/" target="_blank" rel="noopener noreferrer">
+          InnoWalletix - HD Wallet
+        </a>
+      </div>
+      <div className='product_footer_container'>
+        Source Code @ 
+        <a className="product_footer_text" href="https://github.com/Chainxt/InnoWalletix-HD-Wallet" target="_blank" rel="noopener noreferrer">
+          Chainxt Github
+        </a>
+      </div>
       {showAlert && (
             <Alert
               message={alertMessage}
@@ -408,15 +443,15 @@ function HDWalletForm({ isPasscodeEntered,  setIsPasscodeEntered}) {
             />
           )}
       {!isPasscodeEntered && 
-      <div> 
-        <div className="parent-container">
-          <h2>Validate Password</h2>
-          <input type="password" placeholder="Validate Passcode" value={validatePasscodeValue} onChange={handleValidatePasscodeChange}/>
+      <div className="child-container"> 
+        <div className="validate-passcode-container">
+          <div className="passcode-title">Validate Password</div>
+          <input className="validate-passcode-input" type="password" placeholder="Validate Passcode" value={validatePasscodeValue} onChange={handleValidatePasscodeChange}/>
           <button className="add-passcode-button" onClick={handleValidatePasscodeClicked}>Submit</button>
       </div>
       </div>}
       {isPasscodeEntered &&  
-      <div> 
+      <div className="child-wallet-container"> 
           {showAccountPopup && (
             <AddAccountPopup
               index={addressList.length+1}
@@ -438,8 +473,7 @@ function HDWalletForm({ isPasscodeEntered,  setIsPasscodeEntered}) {
               importPrivateKey = {importPrivateKey}
             />
           )}
-          <h2>HD Wallet</h2>
-          <div>
+          <div className="wallet-dropdown-container">
             <Dropdown networks={networkOptions} defaultOption={selectedNetworkProvider} onChange={handleNetworkChange} />
           </div>
           {showLoader ? <LoadSpinner message={"Loading..."}/> : <></>}
