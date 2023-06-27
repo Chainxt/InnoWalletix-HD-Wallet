@@ -79,6 +79,36 @@ function HDWalletForm({ isPasscodeEntered,  setIsPasscodeEntered}) {
     localStorage.setItem('hdWalletAccounts', encryptedData);
   }
 
+  const disconnectWallet = () =>{
+    localStorage.removeItem("networkProvider");
+    localStorage.removeItem("hdWalletAccounts");
+    localStorage.removeItem("passcode");
+    localStorage.removeItem("selectedAccountIndex");
+    setMnemonic("");
+    setImportMnemonic("");
+    setExportedMnemonic("");
+    setExportedPrivateKey("");
+    setAddressList([]);
+    setSelectedAccountObject(null);
+    setShowAccountList(false);
+    setCurrentAccountBalance("0");
+    setShowImportWalletScreen(false);
+    setShowSendEthersComponent(false);
+    setRecipientAccount("");
+    setEtherTransferValue("");
+    setShowAlert(false);
+    setAlertMessage("");
+    setShowAccountPopup(false);
+    setNewAccountName("");
+    setShowImportPopup(false);
+    setImportPrivateKey("");
+    setConnectedToNetwork(false);
+    setPasscode("");
+    setConfirmPasscode("");
+    setIsPasscodeMatched(true);
+    setValidatePasscodeValue("");
+  }
+
   const handlePasscodeInputChange = (event) =>{
     setPasscode(event.target.value);
   }
@@ -553,6 +583,11 @@ function HDWalletForm({ isPasscodeEntered,  setIsPasscodeEntered}) {
                       <button onClick={sendEthers}>Send</button>
                     </div>
                   </div>}
+              </div>
+              <div>
+                <button onClick={() => disconnectWallet()}>
+                    Logout
+                </button>
               </div>
           </div>}
       </div>}
