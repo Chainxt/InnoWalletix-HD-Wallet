@@ -1,15 +1,18 @@
 
 import './App.css';
 import GenerateWallet from "../src/components/wallet";
+import Home from "../src/components/home";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState , useEffect} from 'react'
 
 function App() {
   const [isPasscodeEntered, setIsPasscodeEntered] = useState(false);
   return (
-    <div className="App">
-      <GenerateWallet isPasscodeEntered={isPasscodeEntered} setIsPasscodeEntered={setIsPasscodeEntered}/>
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/wallet" element={<GenerateWallet isPasscodeEntered={isPasscodeEntered} setIsPasscodeEntered={setIsPasscodeEntered}/>}/>
+      </Routes>
   );
 }
 

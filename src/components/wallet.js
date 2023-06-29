@@ -102,11 +102,14 @@ function HDWalletForm({ isPasscodeEntered,  setIsPasscodeEntered}) {
     setNewAccountName("");
     setShowImportPopup(false);
     setImportPrivateKey("");
+    setShowLoader(false);
     setConnectedToNetwork(false);
     setPasscode("");
     setConfirmPasscode("");
     setIsPasscodeMatched(true);
     setValidatePasscodeValue("");
+    setSelectedNetworkProvider("ganache");
+    window.location.reload();
   }
 
   const handlePasscodeInputChange = (event) =>{
@@ -404,22 +407,6 @@ function HDWalletForm({ isPasscodeEntered,  setIsPasscodeEntered}) {
   if(!localStorage.getItem('passcode')){
     return (
       <div className="parent-container">
-        <div className='logo_container'>
-        <a href="https://www.chainxt.io" target="_blank" rel="noopener noreferrer">
-          <img src={chainxt_logo} className='logo_image'></img>
-        </a>
-      </div>
-      <div className='product_title_container'>
-        <a className="product_title_text" href="https://www.chainxt.io/2023/06/25/introduction-to-innowalletix-hd-wallet/" target="_blank" rel="noopener noreferrer">
-          InnoWalletix - HD Wallet
-        </a>
-      </div>
-      <div className='product_footer_container'>
-        Source Code @ 
-        <a className="product_footer_text" href="https://github.com/Chainxt/InnoWalletix-HD-Wallet" target="_blank" rel="noopener noreferrer">
-          Chainxt Github
-        </a>
-      </div>
         <div className="validate-passcode-container">
         <div className="passcode-title">Set Passcode</div>
          <form onSubmit={handlePasscodeSubmit}>
@@ -450,22 +437,7 @@ function HDWalletForm({ isPasscodeEntered,  setIsPasscodeEntered}) {
 
   return (
     <div className="parent-container">
-      <div className='logo_container'>
-        <a href="https://www.chainxt.io" target="_blank" rel="noopener noreferrer">
-          <img src={chainxt_logo} className='logo_image'></img>
-        </a>
-      </div>
-      <div className='product_title_container'>
-        <a className="product_title_text" href="https://www.chainxt.io/2023/06/25/introduction-to-innowalletix-hd-wallet/" target="_blank" rel="noopener noreferrer">
-          InnoWalletix - HD Wallet
-        </a>
-      </div>
-      <div className='product_footer_container'>
-        Source Code @ 
-        <a className="product_footer_text" href="https://github.com/Chainxt/InnoWalletix-HD-Wallet" target="_blank" rel="noopener noreferrer">
-          Chainxt Github
-        </a>
-      </div>
+      
       {showAlert && (
             <Alert
               message={alertMessage}
