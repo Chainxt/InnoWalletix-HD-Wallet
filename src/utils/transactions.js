@@ -8,14 +8,14 @@ const getProviderForNetwork = (network) => {
   switch (network) {
     case 'goerli':
       return new ethers.providers.JsonRpcProvider(REACT_APP_ALCHEMY_API_URL);
-    case 'ganache':
-      return new ethers.providers.JsonRpcProvider(REACT_APP_GANACHE_ENDPOINT);
+    // case 'ganache':
+    //   return new ethers.providers.JsonRpcProvider(REACT_APP_GANACHE_ENDPOINT);
     case 'sepolia':
       return new ethers.providers.JsonRpcProvider(REACT_APP_SEPOLIA_ENDPOINT);
     case 'polygon':
     return new ethers.providers.JsonRpcProvider(REACT_APP_POLYGON_ENDPOINT);
     default:
-      return new ethers.providers.JsonRpcProvider(REACT_APP_GANACHE_ENDPOINT);
+      return new ethers.providers.JsonRpcProvider(REACT_APP_POLYGON_ENDPOINT);
   }
 };
 

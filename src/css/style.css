@@ -80,17 +80,31 @@ strong{
   color: #fff;
   border-radius: 4px;
   transition: 0.5s;
-  box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4);
 }
-.btn:hover{
+.btn:hover,
+.btn.btn-primary:hover,
+.btn:focus{
   background-color: #761ac1cc;
   color: #fff;
+}
+
+.btn.btn-primary{
+  background-color: #761ac1;
+  color: #fff;
+  border: 2px solid #761ac1;
+  box-shadow: none;
 }
 
 .btn.btn-secondry{
   background-color: #fff;
   color: #761ac1;
   border: 2px solid #761ac1;
+  box-shadow: none;
+}
+.btn.btn-secondry:hover{
+  background-color: #761ac1;
+  color: #fff;
+  border: 2px solid #fff;
   box-shadow: none;
 }
 
@@ -109,6 +123,12 @@ strong{
 
 .btn:hover i {
   transform: translateX(5px);
+}
+
+select {
+  padding: 0.5rem;
+  border-radius: 4px;
+  width: 100%;
 }
 
 /* Background */
@@ -328,9 +348,16 @@ section {
   padding: 4px 0;
   box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
 }
+.dashboard-content .header.header-scrolled{
+  box-shadow: 0px 2px 2px rgba(1, 41, 112, 0.1);
+}
 
 .header .logo {
-  line-height: 0;
+  line-height: 1;
+}
+.dashboard-content .header .logo {
+  line-height: 1;
+  display: inline-block;
 }
 
 .header .logo img {
@@ -346,6 +373,14 @@ section {
   color: #012970;
   font-family: 'Poppins', sans-serif;
   margin-top: 3px;
+}
+a.logo-innowallet {	
+  display: inline-block;	
+  text-decoration: none;	
+  color: #761AC1;	
+  font-size: 20px;	
+  line-height: 1;	
+  font-weight: 500;	
 }
 
 /*--------------------------------------------------------------
@@ -526,9 +561,10 @@ section {
     display: block;
   }
 
-  .navbar ul {
+  .header .navbar ul {
     display: none;
   }
+  
 }
 
 .navbar-mobile {
@@ -805,6 +841,9 @@ section {
   z-index: 0;
   padding: 0;
 }
+.hero-banner{
+  background-image: linear-gradient(to right, #dcb3ef 0%, #bc87d5 100%);
+}
 .hero-overlay{
   position: absolute;
   left: 0;
@@ -813,10 +852,12 @@ section {
   height: 100%;
   z-index: -1;
   background-color: transparent;
+  background-image: linear-gradient(90deg, #00080FCC 0%, #00080F00 100%);
+  transition: background-image 0.3s, border-radius 0.3s, opacity 0.3s;
 }
 .hero h1 {
   margin: 0;
-  font-size: 58px;
+  font-size: 44px;
   font-weight: 300;
   color: #fff;
 }
@@ -838,11 +879,7 @@ section {
 }
 
 .hero-banner-slider{
-  padding: 50px 0;
-  height:85vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 100px 0;
 }
 
 .hero-banner-slider .swiper-pagination{
@@ -1024,11 +1061,42 @@ section {
 .register-section {
   width: 100%;
   height: 100vh;
-  background: url(../assets/img/hero-banner.jpg) top center no-repeat;
-  background-size: cover;
   position: relative;
   z-index: 0;
   padding: 0;
+}
+.login-section .right-col-image,
+.register-section .right-col-image{
+  /* background: url(../assets/img/hero-banner.jpg) top center no-repeat; */
+
+  background: url('../assets/img/hero-banner_old.jpg') top center no-repeat;
+    background-size: cover;
+    width: calc(100% - 400px);
+    height: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+}
+.login-section .right-col-image::after,
+.register-section .right-col-image::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* background-image: url('../assets/img/hero-banner_old.jpg'); */
+  background-image: linear-gradient(to bottom, #761ac1cc 0%, #000000cc 100%);
+}
+.right-col-image .inner-container{
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+  
 }
 .login-section .custom-container,
 .register-section .custom-container{
@@ -1048,11 +1116,14 @@ section {
 }
 .login-section .login-content,
 .register-section .register-content {
-  padding: 15px 30px 30px;
+  padding: 15px 40px 30px;
   border-radius: 4px;
   background-color: #fff;
-  width: 100%;
   border: 0px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 100vh;
+  overflow: auto;
 }
 .login-section h1,
 .register-section h1{
@@ -1061,15 +1132,22 @@ section {
 }
 .login-section .login-content label,
 .register-section .register-content label{
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1;
   margin-bottom: 8px;
 }
+.forgot-pw-container .forget-password-link{
+  position: absolute;
+  right: 0;
+  top: 10px;
+  font-size: 13px;
+  line-height: 1;
+}
+.btn-submit,
 .btn-login,
 .btn-register{
   width: 100%;
 }
-.forget-password,
 .register,
 .login{
   text-align: center;
@@ -1079,8 +1157,211 @@ section {
   font-size: 16px;
   color: #761AC1;
 }
+.btn-login-google{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-login-google .google-icon{
+  width: 15px;
+  height: 15px;
+  background-image: url(../assets/img/google-icon.svg);
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+/*--------------------------------------------------------------
+# Dashboard
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Sidebar
+--------------------------------------------------------------*/
+
+.dashboard-wrapper .header {
+  padding: 10px 0;
+  background-color: #edf7ff;
+}
+.dashboard-wrapper .sidebar {
+  max-width: 200px;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  background-color: #edf7ff;
+  border: 1px solid #edf7ff;
+}
+.small-sidebar.dashboard-wrapper .sidebar{
+  max-width: 100px;
+}
+.sidebar .navbar{
+  background-color: #edf7ff;
+  padding-top: 75px;
+}
+.dashboard-wrapper .dashboard-content {
+  max-width: calc(100% - 200px);
+  min-height: 100vh;
+  margin-left: 200px;
+}
+.small-sidebar.dashboard-wrapper .dashboard-content {
+  max-width: calc(100% - 100px);
+  margin-left: 100px;
+}
+.sidebar .logo-wrapper{
+  padding: 10px 0;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar .logo-wrapper .navbar-brand.logo{
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+.navbar-brand.logo img.large-logo{
+  max-width: 160px;
+}
+.navbar-brand.logo img.small-logo{
+  max-width: 56px;
+  transform: scale(0.55);
+  display: none;
+}
+.small-sidebar .navbar-brand.logo img.large-logo{
+  display: none;
+}
+.small-sidebar .navbar-brand.logo img.small-logo{
+  display: inline-block;
+}
+
+.admin-detail{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+.admin-detail .avatar-image{
+  max-width: 40px;
+  border-radius: 100px;
+  width: 40px;
+  height: 40px;
+}
+#toggleMenuBar{
+  font-size: 18px;
+  line-height: 1;
+  margin-left: 1.5rem;
+}
+#toggleMenuBar .cross-icon{
+  display: none;
+}
+.small-sidebar #toggleMenuBar .cross-icon{
+  display: block;
+}
+.small-sidebar #toggleMenuBar .menu-bar-icon{
+  display: none;
+}
+#toggleMenuBar i{
+  margin: 0;
+}
+
+/* Sidebar Menu */
+#navbarSidebar {
+  width: 100%;
+}
+#accordionMenu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+#accordionMenu li {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+#accordionMenu li .accordion-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+#accordionMenu li .accordion-button,
+#accordionMenu li a {
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 400;
+  width: 100%;
+  padding: 15px 15px;
+  margin: 0;
+  background: #fff;
+  border-bottom: 0;
+  border-radius: 0px;
+  transition: all 300ms ease;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid #edf7ff;
+}
+.small-sidebar #accordionMenu li .accordion-button span,
+.small-sidebar #accordionMenu li a span {
+  display: none;
+}
+#accordionMenu li li a{
+  border-bottom: 1px solid #fff;
+}
+#accordionMenu li i{
+  font-size: 18px;
+  line-height: 1;
+  margin-left: 0;
+}
+#accordionMenu li .accordion-button::after{
+  color: #761ac1;
+  margin: 0;
+  right: 15px;
+  position: absolute;
+}
+#accordionMenu li .accordion-button:not(.collapsed),
+#accordionMenu li .accordion-button:hover,
+#accordionMenu li a:hover,
+#accordionMenu li .accordion-button.active,
+#accordionMenu li a.active {
+  background-color: #761AC1;
+  color: #fff;
+  border-bottom: 1px solid #edf7ff;
+}
+#accordionMenu li .accordion-button:not(.collapsed)::after,
+#accordionMenu li .accordion-button:hover::after{
+  filter: invert(1);
+}
+#accordionMenu li ul {
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+#accordionMenu li ul a{
+  background-color: #edf7ff;
+}
+#accordionMenu li li a{
+  padding: 15px 15px 15px 25px;
+} 
+
+/* Dashboard */
+.dashboard {
+  height: calc(100% - 115px);
+  padding: 1rem;
+}
+
+
 /*-------------- Sudershan's css---------------- */
 .home-container{
-  /* padding: 120px; */
   margin-left: 0px !important;
+}
+
+
+.githubLogoCls{
+  height: 20px;
+  margin: 5px;
+}
+
+.letsstartbtn{
+  padding: 3px;
 }

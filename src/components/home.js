@@ -3,11 +3,14 @@ import "../css/style.css";
 import "../assets/img/favicon.png";
 import "../assets/img/apple-touch-icon.png";
 import logo from '../assets/chainxt_logo.png';
+// import githubLogo from '../assets/github-icon.png';
+import githubLogo from '../assets/github.svg';
+import bannerRightImage from '../assets/img/wallet-image1.png'
 import { Link, Routes, Route, Outlet, useLocation } from 'react-router-dom';
 import GenerateWallet from "../components/wallet";
 import { useState , useEffect} from 'react'
 import { Row, Col, Card, Button } from 'react-bootstrap'
-
+import "../css/bootstrap-icons/bootstrap-icons.css";
 
 export default function Home({}) {
     return (
@@ -20,92 +23,90 @@ export default function Home({}) {
 
             <header id="header" className="header fixed-top">
 
-            <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
-                <a href="index.html" className="logo d-flex align-items-center">
-                <img src={logo} alt="Chainxt" />
-                </a>
-            </div>
+                <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
+                    <div className="header-left-container d-flex align-items-center">
+                        <a target={"_blank"} href="https://www.chainxt.io" className="logo d-flex align-items-center">
+                            <img src={logo} alt="Chainxt" />
+                        </a>
+                        {/* <a href="index.html" className="logo logo-innowallet d-flex align-items-center">
+                            <div>
+                                InnoWalletix - HD Wallet
+                            </div>
+                        </a> */}
+                    </div>
+                    <div className="header-right-container">
+                        <a target={"_blank"} href="https://github.com/Chainxt/InnoWalletix-HD-Wallet" className="btn btn-secondry"><img className="githubLogoCls" src={githubLogo} alt="Github" />Github</a>
+                    </div>
+
+                </div>
               
             </header>
     
             <main id="main">
-                <section id="hero" className="hero d-flex align-items-center">
-                    <div className="hero-overlay"></div>
-                    <div className="container home-container">
-                        <div className="row">
-                        <div className="col-lg-12">
-                            <div className="hero-banner-slider swiper">
-                            {<div className="swiper-wrapper align-items-center">
-                                <div className="swiper-slide">
-                                <div className="row flex-column-reverse flex-lg-row">
-                                    <div className="col-lg-7 d-flex flex-column justify-content-center">
-                                    <h1 data-aos="fade-up">InnoWalletix - HD Wallet</h1>
-                                    <h2 data-aos="fade-up" data-aos-delay="400">InnoWalletix is a versatile non-custodial HD wallet that seamlessly integrates blockchain transactions into applications.</h2>
-                                    <div data-aos="fade-up" data-aos-delay="600">
-                                        <div className="text-center text-lg-start">
-                                        <Link to="/wallet" className="btn btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                                            <span>Let's Start</span>
-                                            <i className="bi bi-arrow-right"></i>
-                                        </Link>
-                                        {/* <Button onClick={()=> getStartedButtonClicked()} className="btn btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">Let's Start</Button> */}
-                                        <a href="https://github.com/Chainxt/InnoWalletix-HD-Wallet" className="btn btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                                            <span>Github</span>
-                                            <i className="bi bi-arrow-right"></i>
-                                        </a> 
-                                        {/* <a href="#" className="btn btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                                            <span>Let's Start</span>
-                                            <i className="bi bi-arrow-right"></i>
-                                        </a>
-                                        <a href="https://github.com/Chainxt/InnoWalletix-HD-Wallet" className="btn btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                                            <span>Github</span>
-                                            <i className="bi bi-arrow-right"></i>
-                                        </a> */}
-                                        </div>
-                                    </div>
-                                    </div>
-                                    <div className="col-lg-5 hero-img mb-3 mb-lg-0" data-aos="zoom-out" data-aos-delay="200">
+                <section id="hero" className="hero hero-banner d-flex align-items-center py-3">
+                    <div className="container">
+                        {
+                        <div className="row flex-column-reverse flex-lg-row">
+                            <div className="col-lg-7 d-flex flex-column justify-content-center">
+                                <h1>InnoWalletix - HD Wallet</h1>
+                                <h2>InnoWalletix is a versatile non-custodial HD wallet that seamlessly integrates blockchain transactions into applications.</h2>
+                                <div className="button-wrapper">
+                                    <div className="text-center text-lg-start">
+                                    <Link to="/wallet" className="btn btn-primary btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                        <span className="letsstartbtn">Let's Start</span>
+                                        <i className="bi bi-arrow-right"></i>
+                                    </Link>
+                                    <a target={"_blank"} href="https://github.com/Chainxt/InnoWalletix-HD-Wallet" className="btn btn-secondry btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center ms-3">
+                                        <img className="githubLogoCls" src={githubLogo} alt="Github" />
+                                        <span>Github</span>
+                                        <i className="bi bi-arrow-right"></i>
+                                    </a> 
                                     </div>
                                 </div>
-                                </div>
-                            </div>}
-
-                            <div className="swiper-pagination"></div>
+                            </div>
+                            <div className="col-lg-5 hero-img mb-3 mb-lg-0">
+                                <figure>
+                                    <img src={bannerRightImage} className="img-fluid" alt="InnoWalletix HT Wallet" />
+                                </figure>
                             </div>
                         </div>
-                        </div>
+                        }
                     </div>
                 </section>
             </main>
-            <footer id="footer" class="footer">
 
-                <div class="footer-top">
-                <div class="container">
-                    <div class="row gy-4">
-                    <div class="col-lg-5 col-md-12 footer-info">
-                        <a href="index.html" class="logo d-flex align-items-center">
+            <footer id="footer" className="footer">
+
+                <div className="footer-top">
+                <div className="container">
+                    <div className="row gy-4">
+                    <div className="col-lg-5 col-md-12 footer-info">
+                        <a target={"_blank"} href="https://www.chainxt.io" className="logo d-flex align-items-center">
+                            <img src={logo} alt="Chainxt" />
                         </a>
                         <p>We are a blockchain consulting company, specialize in developing, training, and consulting on innovative blockchain solutions</p>
-                        <div class="social-links mt-3">
-                        <a href="https://twitter.com/chainxt" target="_blank" class="twitter"><i class="bi bi-twitter"></i></a>
-                        <a href="https://www.facebook.com/chainxt" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/chainxt" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                        <a href="https://github.com/chainxt" target="_blank" class="github"><i class="bi bi-github"></i></a>
-                        <a href="https://www.youtube.com/@chainxt" target="_blank" class="youtube"><i class="bi bi-youtube"></i></a>
+                        <div className="social-links mt-3">
+                        <a target={"_blank"} href="https://twitter.com/chainxt" target="_blank" className="twitter"><i className="bi bi-twitter"></i></a>
+                        <a target={"_blank"} href="https://www.facebook.com/chainxt" target="_blank" className="facebook"><i className="bi bi-facebook"></i></a>
+                        <a target={"_blank"} href="#" className="instagram"><i className="bi bi-instagram"></i></a>
+                        <a target={"_blank"} href="https://www.linkedin.com/company/chainxt" target="_blank" className="linkedin"><i className="bi bi-linkedin"></i></a>
+                        <a target={"_blank"} href="https://github.com/chainxt" target="_blank" className="github"><i className="bi bi-github"></i></a>
+                        <a target={"_blank"} href="https://www.youtube.com/@chainxt" target="_blank" className="youtube"><i className="bi bi-youtube"></i></a>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-6 footer-links">
+                    <div className="col-lg-4 col-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
-                        <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="course">Course</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="certification.html">Certification</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="internship.html">Internship</a></li>
+                        <li><i className="bi bi-chevron-right"></i> <a target={"_blank"} href="https://www.chainxt.io/">Home</a></li>
+                        <li><i className="bi bi-chevron-right"></i> <a target={"_blank"} href="https://www.chainxt.io/academy/">Academy</a></li>
+                        <li><i className="bi bi-chevron-right"></i> <a target={"_blank"} href="https://www.chainxt.io/products/">Products</a></li>
+                        <li><i className="bi bi-chevron-right"></i> <a target={"_blank"} href="https://www.chainxt.io/services/">Services</a></li>
+                        <li><i className="bi bi-chevron-right"></i> <a target={"_blank"} href="https://www.chainxt.io/about/">About</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                    <div className="col-lg-3 col-md-12 footer-contact text-center text-md-start">
                         <h4>Contact Us</h4>
                         <p>
                             <strong>Phone:</strong> (+91) 981 016 1638<br/>
@@ -118,12 +119,12 @@ export default function Home({}) {
                 </div>
                 </div>
 
-                <div class="container">
-                <div class="copyright">
+                <div className="container">
+                <div className="copyright">
                     &copy; Copyright <strong><span>Chainxt</span></strong>. All Rights Reserved
                 </div>
                 </div>
-  </footer>
+            </footer>
 
         </div>
       );
