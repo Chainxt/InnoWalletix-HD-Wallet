@@ -5,6 +5,10 @@
   src: url('../fonts/Poppins-Regular.ttf') format('truetype');
 }
 
+body{
+  font-family: 'Poppins', sans-serif;
+}
+
 .parent-container{
     /* align-items: left; */
     /* display: flex; */
@@ -37,7 +41,6 @@
     background-color: #D3D3D3;
     padding: 10px;
     width: 50%;
-    margin: 10px;
     border-radius: 5px;
   }
   
@@ -141,7 +144,8 @@
   }
   
   .accounts-dropdown-container {
-   
+    padding-left: 15%;
+    padding-right: 15%;
   }
   
   /* --------------Popup----------- */
@@ -255,16 +259,15 @@
   
   .connected-text{
     color: green;
-    font-size: 10px;
+    font-size: 12px;
     margin: 10px;
-    /* padding-left: 35%; */
+    padding-left: 40%;
   }
   
   .not-connected-text{
     color: red;
-    font-size: 10px;
+    font-size: 12px;
     margin: 10px;
-    /* padding-left: 35%; */
   }
   
   .SpinnerCls {
@@ -299,9 +302,9 @@
     font-size: 1.5rem;
   }
 
-  .validate-passcode-input{
+  /* .validate-passcode-input{
     margin: 1rem !important;
-  }
+  } */
 
   .child-wallet-container{
     
@@ -343,3 +346,37 @@
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
   }
+
+  /* InnoWalletix title */
+
+    .product-title{
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+    }
+
+    .product-title a{
+      text-decoration: none;
+      color: #7c1ac1;
+    }
+
+    .githubLogoWalletCls{
+      width:100%;
+      margin-top: 16px;
+    }
+
+    .account-detail-name{
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      color: #7c1ac1;
+    }
+    .account-detail-address{
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      color: #7c1ac1;
+    }
+    .account-detail-balance{
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      color: #7c1ac1;
+    }

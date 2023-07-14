@@ -1,8 +1,10 @@
 {
   "name": "hd-wallet",
+  "homepage":"./",
   "version": "0.1.0",
   "private": true,
   "main": "public/electron.js",
+  "proxy":"http://127.0.0.1:7545",
   "dependencies": {
     "crypto-browserify": "^3.12.0",
     "crypto-js": "^4.1.1",
