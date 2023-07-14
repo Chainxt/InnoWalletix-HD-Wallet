@@ -62,6 +62,12 @@ To run the desktop app with elecron, provide the following command:
 npm run electron-start
 ```
 
+## Links
+
+Blog - https://www.chainxt.io/2023/06/25/introduction-to-innowalletix-hd-wallet/ <br/>
+Youtube - https://www.youtube.com/watch?v=mBqAzbHxL-I <br/>
+Live Demo - https://innowalletix.chainxt.io/ <br/><br/>
+
 ## 📜 License
 
 Distributed under the MIT License.
